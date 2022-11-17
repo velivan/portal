@@ -1,0 +1,16 @@
+.nav-ico{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    
+}
+.nav-ico:hover{
+    background-color: var(--select);
+    border: 0;
+    border-radius: 20%;
+    box-shadow: #f4f7fd 10px;
+}
+.nav-ico:active{
+    padding: 8px;
+    border: solid 2px var(--dark);
+}

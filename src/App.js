@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Main from "./component/main/main";
+import Header from "./component/header/Header";
+import Nav from "./component/nav/Nav";
+import "./App.css";
+import Chat from "./component/chat/Chat";
+import Calendar from "./component/calendar/Calendar";
 
-function App() {
+let title = "Porlal",
+  user = "User";
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Header title={title} user={user} />
+        <div className="row">
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="home" element={<Main />} />
+            <Route path="chat" element={<Chat />} />
+            <Route path="calendar" element={<Calendar />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
